@@ -12,6 +12,11 @@ interface Interface2 {
      * Functional interface concept came only to support lambda expression. It is the type of lambda expression
      * @param a
      * @param b
+     *
+     * Git Hub Credentials
+     * uid : dmahapat
+     * pwd : Github@123
+     *
      */
 
     public void add(int a , int b);
