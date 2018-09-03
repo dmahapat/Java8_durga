@@ -7,7 +7,6 @@ import java.text.DecimalFormat;
 //implements Interf like below
 public class Main /*implements Interf*/ {
 
-    private static DecimalFormat df2 = new DecimalFormat(".##");
 
     public static void main(String[] args) {
 
