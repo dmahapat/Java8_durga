@@ -18,6 +18,9 @@ import java.util.*;
  * Map: When we want to represent a group of objects as key value pair we should go for map concept
  *
  * HashMap,TreeMap
+ * 1.Duplicate keys are not allowed
+ * 2.Order is not preserved
+ *
  */
 public class LambdaWithList {
 

@@ -1,4 +1,4 @@
-package com.durga.lambdafunctionalinterface;
+package com.durga.lambdafunctionalinterfacethread;
 
 
 //This class has been written in normal way.

@@ -1,4 +1,4 @@
-package com.durga.lambdafunctionalinterface;
+package com.durga.lambdafunctionalinterfacethread;
 
 public class ThreadDemo2 {
 
