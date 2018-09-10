@@ -25,7 +25,8 @@ public class DefaultMethodWrtMultipleInheritance implements Left, Right {
 
 */
 
-   /* | Interface with default method                                                                               |                                       Abstract class                                      |
+   /*
+    | Interface with default method                                                                               |                                       Abstract class                                      |
     |-------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------:|
     | In interface every variable is public static final.We cannot declare instance variables in interface        | Inside abstract class we can declare instance variables,which can be used for child class |
     | Interface never talks about state of object,it always talks about static variables and no instance variable |                       Abstract class can talk about state of object                       |

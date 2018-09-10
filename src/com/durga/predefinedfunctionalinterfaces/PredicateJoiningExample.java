@@ -11,11 +11,12 @@ package com.durga.predefinedfunctionalinterfaces;
 * negate(),and(),or() are default methods of "Predicate" functional interface
 * */
 
+
 import java.util.function.Predicate;
 
 public class PredicateJoiningExample {
 
-    public static void checkArray(Predicate<Integer> predicate,int[] array){
+    public static void checkArray(Predicate<Integer> predicate, int[] array){
         for (int number: array) {
             if(predicate.test(number)){
                 System.out.println(number);
@@ -43,9 +44,5 @@ public class PredicateJoiningExample {
 
         System.out.println("The numbers greater than 10 or even in the array are: ");
         checkArray(isNumberGreaterThan10.or(isNumberEven),x);
-
-
-
-
     }
 }
