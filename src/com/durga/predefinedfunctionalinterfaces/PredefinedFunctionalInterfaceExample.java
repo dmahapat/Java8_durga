@@ -18,9 +18,10 @@ import java.util.function.Predicate;
 * 1. in lambda expression if we have to give only one parameter then brackets are not required
 * and based on the context compiler can understand the type as well,so no need to give types
 *
-*   | Functional interface | Abstract method | Signature          |
-    |----------------------|-----------------|--------------------|
-    | Predicate            | test            | boolean test(T t); |
+| Functional interface | Abstract method | Signature          |
+|----------------------|-----------------|--------------------|
+| Predicate            | test            | boolean test(T t); |
+| Function             | apply           | R apply(T t);      |
 * */
 public class PredefinedFunctionalInterfaceExample {
 
