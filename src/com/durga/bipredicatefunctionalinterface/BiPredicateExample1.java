@@ -4,7 +4,7 @@ package com.durga.bipredicatefunctionalinterface;
 * 1. Predicate takes only one input parameter but
 *    BiPredicate can take 2 input parameter
 * 2. Function takes only one input parameter but
- *   BiFUnction can take 2 input parameter
+ *   BiFunction can take 2 input parameter
  *3. Consumer takes only one input parameter but
  *   BiConsumer can take 2 input parameter
  *4. Supplier never takes any input.
