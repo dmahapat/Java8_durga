@@ -1,6 +1,7 @@
 package com.durga.stream;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,11 +35,13 @@ public class StreamExample3 {
         integerList.add(10);
         integerList.add(15);
 
+        Comparator<Integer> descendingOrderComparator = (o1, o2) -> (o1>o2) ? -1 : ((o1<o2) ? 1 : 0);
+
         List<Integer> sortedList = integerList.stream()
                                                 .sorted()
                                                 .collect(Collectors.toList());
         List<Integer> descendingOrderedList = integerList.stream()
-                                                            .sorted((o1, o2) -> (o1>o2) ? -1 : ((o1<o2) ? 1 : 0))
+                                                            .sorted(descendingOrderComparator)
                                                             .collect(Collectors.toList());
         System.out.println("Unsorted List: "+integerList);
         System.out.println("Sorted List(ascending order): "+sortedList);
