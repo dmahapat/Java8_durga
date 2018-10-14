@@ -43,7 +43,8 @@ public class StreamOfNumbersExample1 {
         System.out.println("Score of \"hello\": "+intScore.applyAsInt("hello"));
 
         String word =
-                shakespeareWords.stream()
+                shakespeareWords
+                .stream()
                 .filter(word1 -> scrabbleWords.contains(word1))
                 .max(Comparator.comparing(score))
                 .get();
