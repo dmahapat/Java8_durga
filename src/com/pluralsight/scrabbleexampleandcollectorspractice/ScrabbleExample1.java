@@ -1,11 +1,9 @@
-package com.pluralsight.streamofnumbers;
+package com.pluralsight.scrabbleexampleandcollectorspractice;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Comparator;
-import java.util.IntSummaryStatistics;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
@@ -14,7 +12,7 @@ import java.util.stream.Collectors;
 * 1.Suppose we have a stream of people<Person object> and we want to average the ages of all the people whose age > 29
 * 2.But it(average) is available in IntStream
 * */
-public class StreamOfNumbersExample1 {
+public class ScrabbleExample1 {
     public static void main(String[] args) throws IOException {
         Set<String> shakespeareWords =
                 Files.lines(Paths.get("D:\\File\\words.shakespeare.txt"))
@@ -57,6 +55,45 @@ public class StreamOfNumbersExample1 {
                 .summaryStatistics();
 
         System.out.println("Status: "+intSummaryStatistics);
+
+        Map<Integer, List<String>> histoWordsByScore = shakespeareWords.stream()
+                .collect(
+                        Collectors.groupingBy(score)
+                );
+        System.out.println("# histoWordsByScore: "+histoWordsByScore.size());
+
+        /*
+        * We cannot invoke stream method on a Map interface
+        * */
+        histoWordsByScore.entrySet()// Set<Map.Entry<Map<Integer, List<String>>>
+                         .stream()
+                         .filter(scrabbleWords::contains)
+                         .sorted(Comparator.comparing(entry -> -entry.getKey())
+                         )
+                         .limit(3)
+                         .forEach(entry -> System.out.println(entry.getKey()+" - "+entry.getValue()));
+
+
+        Function<String,Map<Integer,Long>> histoWord =
+                w -> w.chars().boxed()
+                            .collect(Collectors.groupingBy(
+                                    letter -> letter,
+                                    Collectors.counting()
+                            )
+                            );
+        Function<String, Long> nBlanks =
+                s -> histoWord.apply(s) // Map<Integer,Long>
+                              .entrySet()
+                              .stream()
+                              .mapToLong(entry ->
+                                      Long.max(
+                                      entry.getValue() -
+                                      scrabbleEnScore[entry.getKey() - 'a'],0L)
+                              )
+                              .sum();
+
+        System.out.println("# of blanks for whizzing: "+nBlanks.apply("whizzing"));
+
 
 
 
