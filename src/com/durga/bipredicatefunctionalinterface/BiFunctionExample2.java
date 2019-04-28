@@ -39,9 +39,5 @@ public class BiFunctionExample2 {
         studentList.add(getStudentObj.apply("Subhasree",5));
 
         System.out.println(studentList);
-
-
-
-
     }
 }

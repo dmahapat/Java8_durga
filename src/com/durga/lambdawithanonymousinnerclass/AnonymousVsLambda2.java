@@ -10,7 +10,7 @@ public class AnonymousVsLambda2 {
     int x = 888;
 
     public void m2() {
-        Interf i = new Interf() {
+        /*Interf i = new Interf() {
             int x = 999;
 
             @Override
@@ -18,11 +18,11 @@ public class AnonymousVsLambda2 {
                 System.out.println(this.x);//always inner object gets considered
                 System.out.println(AnonymousVsLambda2.this.x); // in order to refer outer object we have to write like this
             }
-        };
-        /*Interf i = () -> {
+        };*/
+        Interf i = () -> {
           int x = 999;//inside lambda it is not possible to declare instance variable. this is a local variable
           System.out.println(this.x);// inside lambda "this" always refers outer member only
-         };*/
+         };
         i.m1();
     }
 
