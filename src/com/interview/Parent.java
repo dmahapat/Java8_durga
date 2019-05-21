@@ -7,7 +7,7 @@ public class Parent {
     }
 
     public static void main(String[] args) {
-        Parent p = new Parent();
+        Child p = new Child();
         p.print();
     }
 }

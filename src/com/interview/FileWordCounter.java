@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -18,6 +20,11 @@ public class FileWordCounter {
                      .map(String::toLowerCase)
                      .filter(word -> !word.isEmpty())
                      .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+            long max = map.values().stream().max(Comparator.naturalOrder()).get();
+            List<String> keys = map.entrySet().stream()
+                          .filter(e -> e.getValue() == max)
+                          .map(Map.Entry::getKey)
+                          .collect(Collectors.toList());
             System.out.println(map);
         }catch (IOException exception) {
             exception.printStackTrace();
