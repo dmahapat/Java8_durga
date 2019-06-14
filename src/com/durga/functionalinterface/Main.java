@@ -1,8 +1,5 @@
 package com.durga.functionalinterface;
 
-
-import java.text.DecimalFormat;
-
 //while implementing functional interface(Interf here) using lambda expression we should not use
 //implements Interf like below
 public class Main /*implements Interf*/ {
