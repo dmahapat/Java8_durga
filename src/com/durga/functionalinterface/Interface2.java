@@ -19,5 +19,5 @@ interface Interface2 {
      *
      */
 
-    public void add(int a , int b);
+     public void add(int a , int b);
 }
