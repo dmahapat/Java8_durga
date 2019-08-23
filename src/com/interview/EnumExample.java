@@ -12,7 +12,7 @@ package com.interview;
 *     [byte,short,char,int until 1.4v]
 *     [Byte,Short,Character,Integer from 1.5v + enum types]
 *     [String 1.7V onwards]
-*
+*  2. Enum type can be passed to switch statements
 *
 * */
 
