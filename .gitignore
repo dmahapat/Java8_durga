@@ -1,0 +1,8 @@
+#folder
+.classpath
+.project
+.settings/
+out/
+
+#compiled files
+*.class
