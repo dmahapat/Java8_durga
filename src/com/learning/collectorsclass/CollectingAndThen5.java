@@ -72,8 +72,12 @@ public class CollectingAndThen5 {
 	      new EmployeeT("Nancy Smith", 22, 10000.00f),
 	      new EmployeeT("Deborah Sprightly", 29, 9000.00f));
 		
+		String minAgedEmployee = employeeList.stream()
+					.collect(Collectors.collectingAndThen(Collectors.minBy(Comparator.comparing(EmployeeT::getAge)), val-> val.map(obj -> obj.getName()).orElse("Not Found")));
+		System.out.println("Employee with minimum Age is : "+ minAgedEmployee);
+		
 		String maxSalariedEmp = employeeList.stream()
-		            .collect(Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparing(EmployeeT::getSalary)), emp -> (emp.isPresent() ? emp.get().getName() : "NOT APPLICABLE")));
+		            .collect(Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparing(EmployeeT::getSalary)), emp -> emp.map(EmployeeT::getName).orElse("NOT FOUND")));
 		
 		System.out.println("Employee with maximum salary: "+maxSalariedEmp);
 		

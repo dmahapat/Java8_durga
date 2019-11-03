@@ -11,7 +11,9 @@ import java.util.stream.Stream;
  *    If no elements are passed as the input elements, then this method returns 0.
  * 3. Syntax:
  *    public static <T> Collector<T, ?, Double> averagingDouble(ToDoubleFunction<? super T> mapper)   
- * 4. Interface Collector<T, A, R>: A mutable reduction operation that accumulates input elements into a mutable result container, optionally transforming the accumulated result into a final representation after all input elements have been processed. Reduction operations can be performed either sequentially or in parallel.
+ * 4. Interface Collector<T, A, R>: A mutable reduction operation that accumulates input elements into a mutable result container,
+ *    optionally transforming the accumulated result into a final representation after all input elements have been processed. 
+ *    Reduction operations can be performed either sequentially or in parallel.
 		T: The type of input elements to the reduction operation.
 		A: The mutable accumulation type of the reduction operation.
 		R: The result type of the reduction operation

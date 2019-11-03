@@ -3,6 +3,7 @@ package com.learning.collectorsclass;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.*;
 
@@ -32,12 +33,26 @@ public class MappingExample13 {
 	      new EmployeeMaster("Nancy Smith", 22),
 	      new EmployeeMaster("Deborah Sprightly", 29));
 	      
+	      //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	      
+	      List<String> integers = Arrays.asList("1$","2$","3$");
+	      int sum = IntStream.range(0, integers.size())
+	      			.mapToObj(index->integers.get(index).replace("$", ""))
+	      			.mapToInt(Integer::parseInt)
+	      			.sum();
+	      System.out.println(sum);
+	      //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	      			
+	      			
+	               
+	      /*
 	      List<String> empNameList = asList.stream()
 	            .collect(mapping(EmployeeMaster::getName, toList()));
 	      System.out.println("Employee list: "+asList);
 	      System.out.println("Employee name list: "+empNameList);
 	      Set<String> empNameSet = asList.stream()
 	            .collect(mapping(EmployeeMaster::getName, toSet()));
-	      System.out.println("Employee name set: "+empNameSet);
+	      System.out.println("Employee name set: "+empNameSet);*/
 	}
 }
