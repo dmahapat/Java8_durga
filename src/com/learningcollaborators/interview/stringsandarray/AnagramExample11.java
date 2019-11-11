@@ -1,4 +1,4 @@
-package com.learningcollaborators.interview.strings;
+package com.learningcollaborators.interview.stringsandarray;
 
 import java.util.ArrayList;
 import java.util.Arrays;
