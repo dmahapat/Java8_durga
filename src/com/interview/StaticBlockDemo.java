@@ -11,12 +11,12 @@ package com.interview;
  */
 public class StaticBlockDemo {
 	public static void main(String[] args) {
-		System.out.println(Test.i);
+		System.out.println(Test1.i);
 	}
 
 }
 
-class Test{
+class Test1{
 	static int i;
 	int j;
 	
